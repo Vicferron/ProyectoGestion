@@ -1,0 +1,28 @@
+{% extends "ProyectowebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for post in posts %}
+<div><p></p></div>
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            {% if post.imagen.url != "" %}
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="">
+            {% endif %}
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-lower">{{post.titulo}}</span>
+                </h2>
+                <p class="mb-3">{{post.contenido}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<div><p></p></div>
+{% endfor %}
+<div><p></p></div>
+{% endblock %}
